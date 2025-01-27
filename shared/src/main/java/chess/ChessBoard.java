@@ -36,6 +36,11 @@ public class ChessBoard {
         return board[position.row - 1][position.col - 1];
     }
 
+    public boolean position_inBounds(ChessPosition position) {
+        return (position.getRow() >= 1 && position.getRow() < 9) && (position.getColumn() >= 1 && position.getColumn() < 9);
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) {
