@@ -44,6 +44,9 @@ public class ChessBoard {
         return getPiece(position) == null;
     }
 
+    public boolean position_pieceIsOppositeColor(ChessPosition position, ChessPosition newPosition) {
+        return getPiece(position).pieceColor != getPiece(newPosition).pieceColor;
+    }
 
 
 
