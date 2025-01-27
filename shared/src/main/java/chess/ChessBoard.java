@@ -40,6 +40,12 @@ public class ChessBoard {
         return (position.getRow() >= 1 && position.getRow() < 9) && (position.getColumn() >= 1 && position.getColumn() < 9);
     }
 
+    public boolean position_isEmpty(ChessPosition position) {
+        return getPiece(position) == null;
+    }
+
+
+
 
     @Override
     public boolean equals(Object o) {
