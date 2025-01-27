@@ -86,5 +86,38 @@ public class ChessBoard {
         ChessPiece whiteKnight = new ChessPiece(white, knight);
         ChessPiece blackKnight = new ChessPiece(black, knight);
 
+        ChessPiece whitePawn = new ChessPiece(white, pawn);
+        ChessPiece blackPawn = new ChessPiece(black, pawn);
+
+
+        // set rook
+        board[0][0] = whiteRook; board[0][7] = whiteRook;
+        board[7][0] = blackRook; board[7][7] = blackRook;
+
+        // set knights
+        board[0][1] = whiteKnight; board[0][6] = whiteKnight;
+        board[7][1] = blackKnight; board[7][6] = blackKnight;
+
+        // set bishops
+        board[0][2] = whiteBishop; board[0][5] = whiteBishop;
+        board[7][2] = blackBishop; board[7][5] = blackBishop;
+
+        // set bishops
+        board[0][3] = whiteQueen; board[0][4] = whiteKing;
+        board[7][3] = blackQueen; board[7][4] = blackKing;
+
+        // set pawns
+        for (int i = 0; i < 8; i++) {
+            board[1][i] = whitePawn;
+            board[6][i] = blackPawn;
+        }
+
+        // set everything else null
+        for (int i = 2; i < 6; i++) {
+            for (int j = 0; j < 8; j++) {
+                board[i][j] = null;
+            }
+        }
+
     }
 }
