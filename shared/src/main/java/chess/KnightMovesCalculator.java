@@ -10,13 +10,17 @@ public class KnightMovesCalculator implements Hopper{
         int[][] deltas = new int[][] {{1, 2}, {2, 1}, {-1, 2}, {-2, 1}, {1, -2}, {2, -1}, {-1, -2}, {-2, -1}};
         for (int[] delta : deltas) {
             var newPosition = new ChessPosition(position.getRow() + delta[0], position.getColumn() + delta[1]);
-            possibleMoves.add(new ChessMove(position, newPosition, null));
+            if (canMove(board, position, newPosition)) {
+                possibleMoves.add(new ChessMove(position, newPosition, null));
+            }
         }
         return possibleMoves;
     }
 
 
-    public boolean canMove(ChessBoard board, ChessPosition position, ChessPiece piece) {return true;}
+    public boolean canMove(ChessBoard board, ChessPosition position, ChessPosition newPosition) {
+        return board.position_inBounds(newPosition);/* && (board.position_isEmpty(newPosition) || board.position_pieceIsOppositeColor(position, newPosition));*/
+    }
 
 
 }
