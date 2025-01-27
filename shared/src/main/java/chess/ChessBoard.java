@@ -38,6 +38,29 @@ public class ChessBoard {
      * (How the game of chess normally starts)
      */
     public void resetBoard() {
-        throw new RuntimeException("Not implemented");
+        ChessGame.TeamColor white = ChessGame.TeamColor.WHITE;
+        ChessGame.TeamColor black = ChessGame.TeamColor.BLACK;
+        ChessPiece.PieceType pawn = ChessPiece.PieceType.PAWN;
+        ChessPiece.PieceType rook = ChessPiece.PieceType.ROOK;
+        ChessPiece.PieceType queen = ChessPiece.PieceType.QUEEN;
+        ChessPiece.PieceType king = ChessPiece.PieceType.KING;
+        ChessPiece.PieceType knight = ChessPiece.PieceType.KNIGHT;
+        ChessPiece.PieceType bishop = ChessPiece.PieceType.BISHOP;
+
+        ChessPiece whiteRook = new ChessPiece(white, rook);
+        ChessPiece blackRook = new ChessPiece(black, rook);
+
+        ChessPiece whiteQueen = new ChessPiece(white, queen);
+        ChessPiece blackQueen = new ChessPiece(black, queen);
+
+        ChessPiece whiteKing = new ChessPiece(white, king);
+        ChessPiece blackKing = new ChessPiece(black, king);
+
+        ChessPiece whiteBishop = new ChessPiece(white, bishop);
+        ChessPiece blackBishop = new ChessPiece(black, bishop);
+
+        ChessPiece whiteKnight = new ChessPiece(white, knight);
+        ChessPiece blackKnight = new ChessPiece(black, knight);
+
     }
 }
